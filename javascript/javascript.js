@@ -19,42 +19,42 @@ const dice = document.getElementById('dice');
 
 // Define characters array
 const characters = [
-    "/images/character0.png",
-    "/images/character1.png",
-    "/images/character2.png",
-    "/images/character3.png",
-    "/images/character4.png",
+    "../images/character0.png",
+    "../images/character1.png",
+    "../images/character2.png",
+    "../images/character3.png",
+    "../images/character4.png",
 ];
 
 //outfits characters
 const outfitsCharacter0 = [
-    "/images/character0-outfit0.png",
-    "/images/character0-outfit1.png",
-    "/images/character0-outfit2.png"
+    "../images/character0-outfit0.png",
+    "../images/character0-outfit1.png",
+    "../images/character0-outfit2.png"
 ];
 
 const outfitsCharacter1 = [
-    "/images/character1-outfit0.png",
-    "/images/character1-outfit1.png",
-    "/images/character1-outfit2.png"
+    "../images/character1-outfit0.png",
+    "../images/character1-outfit1.png",
+    "../images/character1-outfit2.png"
 ];
 
 const outfitsCharacter2 = [
-    "/images/character2-outfit0.png",
-    "/images/character2-outfit1.png",
-    "/images/character2-outfit2.png"
+    "../images/character2-outfit0.png",
+    "../images/character2-outfit1.png",
+    "../images/character2-outfit2.png"
 ];
 
 const outfitsCharacter3 = [
-    "/images/character3-outfit0.png",
-    "/images/character3-outfit1.png",
-    "/images/character3-outfit2.png"
+    "../images/character3-outfit0.png",
+    "../images/character3-outfit1.png",
+    "../images/character3-outfit2.png"
 ];
 
 const outfitsCharacter4 = [
-    "/images/character4-outfit0.png",
-    "/images/character4-outfit1.png",
-    "/images/character4-outfit2.png"
+    "../images/character4-outfit0.png",
+    "../images/character4-outfit1.png",
+    "../images/character4-outfit2.png"
 ];
 
 // lets
@@ -141,7 +141,7 @@ function showCharacterDiv() {
     header1.textContent = `Choose ur avatar, ` + namePlayer
 
     dice.classList.remove('hide');
-    document.body.style.backgroundImage = "url(images/bedroom.jpg)"
+    document.body.style.backgroundImage = "url(../images/bedroom.jpg)"
 }
 
 /*-------------------------------------Random character--------------------------------------*/
