@@ -19,14 +19,13 @@ const dice = document.getElementById('dice');
 
 // Define characters array
 const characters = [
-    "character0.png",
-    "character1.png",
-    "character2.png",
-    "character3.png",
-    "character4.png",
+    "./images/character0.png",
+    "./images/character1.png",
+    "./images/character2.png",
+    "./images/character3.png",
+    "./images/character4.png",
 ];
 
-//outfits characters
 const outfitsCharacter0 = [
     "./images/character0-outfit0.png",
     "./images/character0-outfit1.png",
@@ -56,6 +55,7 @@ const outfitsCharacter4 = [
     "./images/character4-outfit1.png",
     "./images/character4-outfit2.png"
 ];
+
 
 // lets
 let currentIndexCharacter = 0;
