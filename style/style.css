@@ -10,6 +10,7 @@ img {
     display: none;
 }
 
+/*------------------------page 1---------------------------------------------------------------------*/
 body {
     margin: 0;
     padding: 0;
@@ -18,6 +19,26 @@ body {
     overflow: hidden;
 }
 
+/*
 .playButtonStart {
-    flex-direction: column;
+    width: 500px;
+    margin-top: 50px;
+    margin: auto;
+    background-color: antiquewhite;
+    padding: 40px;
+    border-radius: 25px;
+}
+*/
+.playButtonStart {
+    position: absolute; /* Het element moet absoluut gepositioneerd zijn */
+    top: 50%; /* Plaats het bovenste punt van het element op 50% van de hoogte van de container */
+    left: 50%; /* Plaats het linkerpunt van het element op 50% van de breedte van de container */
+    transform: translate(-50%, -50%); 
+    background-color: antiquewhite;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+#playButton {
+    background-color: palevioletred;
 }
