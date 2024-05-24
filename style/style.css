@@ -1,4 +1,4 @@
-#arrowRight, #arrowLeft, #arrowLeftOutfit, #arrowRightOutfit {
+.arrow {
     width: 100px;
 }
 
@@ -6,39 +6,42 @@ img {
     width: 200px;
 }
 
-.hide {
-    display: none;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-/*------------------------page 1---------------------------------------------------------------------*/
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
     background-image: url(/images/page1.jpg);
     background-size: cover;
-    overflow: hidden;
 }
 
-/*
-.playButtonStart {
-    width: 500px;
-    margin-top: 50px;
-    margin: auto;
+.playButtonStart, .divCharacter, .secondDivCharacterOutfits {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
     background-color: antiquewhite;
     padding: 40px;
     border-radius: 25px;
 }
-*/
-.playButtonStart {
-    position: absolute; /* Het element moet absoluut gepositioneerd zijn */
-    top: 50%; /* Plaats het bovenste punt van het element op 50% van de hoogte van de container */
-    left: 50%; /* Plaats het linkerpunt van het element op 50% van de breedte van de container */
-    transform: translate(-50%, -50%); 
-    background-color: antiquewhite;
-    padding: 50px;
-    border-radius: 25px;
+
+
+.header1, .header2 {
+    color: black;
+    font-size: 24px; 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+.hide {
+    display: none;
 }
 
-#playButton {
-    background-color: palevioletred;
+.btn {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
 }

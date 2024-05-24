@@ -11,20 +11,34 @@
     <div class="playButtonStart">
         <h1>Welcome to the avatar game!</h1>
         <input type="text" placeholder="Enter name" class="nameInput">
-        <button id="playButton">play</button>
+        <button id="playButton" class="btn">Play</button>
     </div>
+
+    <div class="divCharacter hide">
+        <h2 class="header1">Choose your avatar</h2>
+        <div class="characterSelection">
+            <img id="arrowLeft" class="arrow" src="images/left.png" alt="arrow left">
+            <img id="characterImage" class="characterImageOutfit" src="images/character0.png" alt="character">
+            <img id="arrowRight" class="arrow" src="images/right.png" alt="arrow right">
+        </div>
+        <img id="dice" src="images/dice.png" alt="dice">
+        <button id="confirmCharacterButton" class="btn">Confirm</button>
+    </div>
+
     <div class="secondDivCharacterOutfits hide">
-        <h2 class="header1">choose ur avatar</h2>
-        <h2 class="header2 hide">choose ur oufit</h2>
-        <img id="arrowLeft" class="characterArrow1" src="images/left.png" alt="arrow left"></button>
-        <img id="arrowLeftOutfit" class="outfitArrows1 hide" src="images/left.png" alt="arrow left"></button>
-        <img id="characterImage" src="images/character0.png" alt="character">
-        <img id="arrowRight" class="characterArrow2" src="images/right.png" alt="arrow right"></button>
-        <img id="dice" class="dice hide" src="images/dice.png" alt="dice">
-        <img id="arrowRightOutfit" class="outfitArrows2 hide" src="images/right.png" alt="arrow right"></button>
-        <button id="confirmCharacterButton" class="confirmCharacterButton">Confirm</button>
-        <button id="confirmOufitButton" class="confirmOufitButton hide">Finish</button>
+        <h2 class="header2">Choose your outfit</h2>
+        <div class="outfitSelection">
+            <img id="arrowLeftOutfit" class="arrow" src="images/left.png" alt="arrow left">
+            <img id="characterImageOutfit" src="images/character0.png" alt="character outfit">
+            <img id="arrowRightOutfit" class="arrow" src="images/right.png" alt="arrow right">
+        </div>
+        <button id="confirmOufitButton" class="btn">Finish</button>
     </div>
+
+    <div class="bedroomCharacter hide">
+        <img id="finalizedCharacter" src="images/character0-outfit0.png" alt="final character">
+    </div>
+
     <script src="javascript/javascript.js"></script>
 </body>
 </html>

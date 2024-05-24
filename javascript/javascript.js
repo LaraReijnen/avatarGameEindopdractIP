@@ -4,18 +4,20 @@ const characterImage = document.getElementById('characterImage');
 const confirmCharacterButton = document.getElementById('confirmCharacterButton');
 const arrowLeftOutfit = document.getElementById('arrowLeftOutfit');
 const arrowRightOutfit = document.getElementById('arrowRightOutfit');
-const characterArrow1 = document.querySelector('.characterArrow1');
-const characterArrow2 = document.querySelector('.characterArrow2');
-const outfitArrow1 = document.querySelector('.outfitArrows1');
-const outfitArrow2 = document.querySelector('.outfitArrows2');
 const confirmOufitButton = document.getElementById('confirmOufitButton');
 const playButton = document.getElementById('playButton');
 const playButtonStart = document.querySelector('.playButtonStart');
 const header1 = document.querySelector('.header1');
 const header2 = document.querySelector('.header2');
+const divCharacter = document.querySelector('.divCharacter');
 const secondDivCharacterOutfits = document.querySelector('.secondDivCharacterOutfits');
 const nameInput = document.querySelector('.nameInput');
 const dice = document.getElementById('dice');
+const clickButtonSound = new Audio('sounds/ClickSoundButton.mp3');//Audio Button Sound, Bron: https://www.youtube.com/watch?v=sW8TKZtoND8
+const backgroundSound = new Audio('sounds/backgroundSound.mp3'); // Audio Background Sound, Bron: https://www.youtube.com/watch?v=GNDWNW3IKwU&list=PLMf0q6-pSDdsWY4LWYncx25qvonLA520c&index=21
+const characterImageOutfit = document.getElementById('characterImageOutfit');
+const finalCharacter = document.querySelector('.bedroomCharacter')
+const imgFInalCharacter = document.getElementById('finalizedCharacter')
 
 // Define characters array
 const characters = [
@@ -84,14 +86,8 @@ function displayOutfitSelection() {
 function selectOufit() {
     console.log("kies de outfit");
 
-    characterArrow1.classList.toggle('hide');
-    characterArrow2.classList.toggle('hide');
-    outfitArrow1.classList.toggle('hide');
-    outfitArrow2.classList.toggle('hide');
-    confirmCharacterButton.classList.toggle('hide');
-    confirmOufitButton.classList.toggle('hide');
-    header1.classList.toggle('hide');
-    header2.classList.toggle('hide');
+    secondDivCharacterOutfits.classList.toggle('hide');
+    divCharacter.classList.toggle('hide');
     
     if (currentIndexCharacter === 0) {
         currentOutfits = outfitsCharacter0
@@ -105,43 +101,47 @@ function selectOufit() {
         currentOutfits = outfitsCharacter4
     }
 
-    characterImage.src = currentOutfits[currentIndexOutfit]
+    characterImageOutfit.src = currentOutfits[currentIndexOutfit]
     header2.textContent = `Choose ur outfit, ` + namePlayer //avatar naam
-    dice.classList.add('hide')
+
+    //button sounds plays if clicked
+    clickButtonSound.play();
 }
 
 function nextOutfit() {
     currentIndexOutfit = (currentIndexOutfit + 1) % currentOutfits.length; // Update currentIndexOutfit
-    characterImage.src = currentOutfits[currentIndexOutfit]; // Wijs de geselecteerde outfit toe aan characterImage
+    characterImageOutfit.src = currentOutfits[currentIndexOutfit]; // Wijs de geselecteerde outfit toe aan characterImageOutfit
 }
 
 // Functie om naar de vorige outfit te gaan
 function previousOutfit() {
     currentIndexOutfit = (currentIndexOutfit - 1 + currentOutfits.length) % currentOutfits.length; // Update currentIndexOutfit
-    characterImage.src = currentOutfits[currentIndexOutfit]; // Wijs de geselecteerde outfit toe aan characterImage
+    characterImageOutfit.src = currentOutfits[currentIndexOutfit]; // Wijs de geselecteerde outfit toe aan characterImageOutfit
 }
 
-/*-----------------------bedroom----avatar finish----------------------------------------------------------------*/
+/*--------------------------------bedroom avatar finish----------------------------------------------------------------*/
 function bedroom() {
-    characterArrow1.classList.add('hide');
-    characterArrow2.classList.add('hide');
-    outfitArrow1.classList.add('hide');
-    outfitArrow2.classList.add('hide');
-    confirmCharacterButton.classList.add('hide');
-    confirmOufitButton.classList.add('hide');
-    header2.classList.add('hide');
+    imgFInalCharacter.src = characterImageOutfit.src
 
-
+    divCharacter.classList.add('hide');
+    secondDivCharacterOutfits.classList.add('hide');
+    finalCharacter.classList.toggle('hide')
+ 
+    //button sounds plays if clicked
+    clickButtonSound.play();
 }
 
 function showCharacterDiv() {
-    secondDivCharacterOutfits.classList.remove('hide');
-    playButtonStart.classList.add('hide')
-    namePlayer = nameInput.value // avatar naam
-    header1.textContent = `Choose ur avatar, ` + namePlayer
+    //secondDivCharacterOutfits.classList.add('hide');
+    divCharacter.classList.remove('hide');
+    playButtonStart.classList.add('hide')  //haalt begin scherm weg
+    namePlayer = nameInput.value; // avatar naam
+    header1.textContent = `Choose ur avatar, ` + namePlayer;
 
-    dice.classList.remove('hide');
     document.body.style.backgroundImage = "url(../images/bedroom.jpg)"
+
+    //button sounds plays if clicked
+    clickButtonSound.play();
 }
 
 /*-------------------------------------Random character--------------------------------------*/
@@ -151,6 +151,14 @@ function randomCharacter() {
     characterImage.src = characters[currentIndexCharacter];
 }
 
+/*-------------------------------------Background Sound--------------------------------------*/
+
+// function to play background music
+function playSoundLoop() {
+    backgroundSound.play();
+}
+
+/*-----------------------------------EvenLIsterners----------------------------------------------*/
 arrowLeft.addEventListener('click', previousCharacter);
 arrowRight.addEventListener('click', nextCharacter);
 arrowRightOutfit.addEventListener('click', previousOutfit);
@@ -159,3 +167,9 @@ confirmCharacterButton.addEventListener('click', selectOufit);
 confirmOufitButton.addEventListener('click', bedroom);
 playButton.addEventListener('click', showCharacterDiv);
 dice.addEventListener('click', randomCharacter);
+backgroundSound.addEventListener('ended', playSoundLoop);// When backgroundSound ends it restarts
+
+// Starts the sound when whole page is loaded, otherwise sound wont load
+window.addEventListener('load', () => {
+    playSoundLoop();
+}); // bron om sound te laden:https://chatgpt.com/share/7f3b61a6-c20f-4175-8e5e-cbb494988592
