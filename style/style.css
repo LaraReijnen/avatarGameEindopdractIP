@@ -13,6 +13,7 @@ button {
     border-radius: 15px;
     background-color: palevioletred;
     border-color: mediumvioletred;
+    font-family: fantasy, Helvetica;
 }
 
 button:hover {
@@ -28,6 +29,7 @@ button:hover {
 html, body {
     height: 100%;
     margin: 0;
+    font-family: fantasy, Helvetica;
 }
 
 body {
