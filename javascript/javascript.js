@@ -188,6 +188,7 @@ function goHome() {
 }
 
 /*-----------------------------------EvenLIsterners----------------------------------------------*/
+
 arrowLeft.addEventListener('click', previousCharacter);
 arrowRight.addEventListener('click', nextCharacter);
 arrowRightOutfit.addEventListener('click', previousOutfit);
