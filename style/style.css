@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center;     
-    background-image: url(./images/page1.jpg); /* bron:https://nl.pinterest.com/pin/838584393144678356/*/
+    background-image: url(../images/page1.jpg); /* bron:https://nl.pinterest.com/pin/838584393144678356/*/
     background-size: cover;
 }
 
