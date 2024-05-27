@@ -130,7 +130,7 @@ function bedroom() {
     divCharacter.classList.add('hide');
     secondDivCharacterOutfits.classList.add('hide');
     finalCharacter.classList.toggle('hide')
-    document.body.style.backgroundImage = "url(../images/bedroom.jpg)"
+    document.body.style.backgroundImage = "url(./images/bedroom.jpg)"
     //button sounds plays if clicked
     clickButtonSound.play();
 }
@@ -173,7 +173,7 @@ function showAnimationForEvent() {
 
 function showEventDiv() {
     bgVideo.classList.add('hide')
-    document.body.style.backgroundImage = "url(../images/event.jpg)" // brond: https://nl.pinterest.com/pin/440860251042104281/
+    document.body.style.backgroundImage = "url(./images/event.jpg)" // brond: https://nl.pinterest.com/pin/440860251042104281/
     finalCharacter.classList.remove('hide');
     eventButton.classList.add('hide')
     goBackButton.classList.remove('hide')
@@ -182,7 +182,7 @@ function showEventDiv() {
 /*-------------------------------------Go back home--------------------------------------*/
 
 function goHome() {
-    document.body.style.backgroundImage = "url(../images/bedroom.jpg)" //bron: https://nl.pinterest.com/pin/838584393144678367/
+    document.body.style.backgroundImage = "url(./images/bedroom.jpg)" //bron: https://nl.pinterest.com/pin/838584393144678367/
     eventButton.classList.remove('hide')
     goBackButton.classList.add('hide')
 }
