@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/wonder-boy-in-monster-world');
+@import url('https://fonts.cdnfonts.com/css/pf-tempesta-seven');
+
 .arrow {
     width: 100px;
 }
@@ -13,7 +16,7 @@ button {
     border-radius: 15px;
     background-color: palevioletred;
     border-color: mediumvioletred;
-    font-family: fantasy, Helvetica;
+    font-family: 'PF Tempesta Seven Extended', sans-serif;                                                        
 }
 
 button:hover {
@@ -26,10 +29,15 @@ button:hover {
     width: 70px;
 }
 
+h1, h2, h3 {
+    font-family: 'Wonder Boy In Monster World', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 html, body {
     height: 100%;
     margin: 0;
-    font-family: fantasy, Helvetica;
 }
 
 body {
@@ -64,10 +72,11 @@ body {
     text-align: center; 
 }
 
-.hide {
-    display: none;
+.nameInput {
+    padding: 0.55em 5.05em;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
-
 
 #myVideo {
     position: fixed;
@@ -76,3 +85,7 @@ body {
     min-width: 100%;
     min-height: 100%;
   }
+
+  .hide {
+    display: none;
+}
