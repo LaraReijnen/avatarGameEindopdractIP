@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    
+    <div class="bgVideo hide">
+        <video autoplay muted loop id="myVideo">
+            <source src="/video/video.mp4" type="video/mp4"> <!--bron video: https://www.youtube.com/watch?v=YeYU67u0Gz4-->
+        </video>
+    </div>
+
     <div class="playButtonStart">
         <h1>Welcome to the avatar game!</h1>
         <input type="text" placeholder="Enter name" class="nameInput">
@@ -17,11 +22,11 @@
     <div class="divCharacter hide">
         <h2 class="header1">Choose your avatar</h2>
         <div class="characterSelection">
-            <img id="arrowLeft" class="arrow" src="images/left.png" alt="arrow left">
+            <img id="arrowLeft" class="arrow" src="images/left.png" alt="arrow left"> <!--bron: https://www.flaticon.com/free-icon/right_9492576?term=arrow+right&page=1&position=17&origin=search&related_id=9492576-->
             <img id="characterImage" class="characterImageOutfit" src="images/character0.png" alt="character">
-            <img id="arrowRight" class="arrow" src="images/right.png" alt="arrow right">
+            <img id="arrowRight" class="arrow" src="images/right.png" alt="arrow right"><!--bron: https://www.flaticon.com/free-icon/left_9492590?term=arrow+left&page=1&position=71&origin=search&related_id=9492590-->
         </div>
-        <img id="dice" src="images/dice.png" alt="dice">
+        <img id="dice" src="images/dice.png" alt="dice"> <!--bron:https://www.flaticon.com/free-icon/dice_14536127?term=dice&page=1&position=68&origin=search&related_id=14536127-->
         <button id="confirmCharacterButton" class="btn">Confirm</button>
     </div>
 
@@ -37,7 +42,10 @@
 
     <div class="bedroomCharacter hide">
         <img id="finalizedCharacter" src="images/character0-outfit0.png" alt="final character">
+        <button id="eventButton" class="eventButton">Go to event</button>
+        <button id="goBackButton" class="goBackButton hide">Go home</button>
     </div>
+
 
     <script src="javascript/javascript.js"></script>
 </body>

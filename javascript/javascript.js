@@ -15,9 +15,13 @@ const nameInput = document.querySelector('.nameInput');
 const dice = document.getElementById('dice');
 const clickButtonSound = new Audio('sounds/ClickSoundButton.mp3');//Audio Button Sound, Bron: https://www.youtube.com/watch?v=sW8TKZtoND8
 const backgroundSound = new Audio('sounds/backgroundSound.mp3'); // Audio Background Sound, Bron: https://www.youtube.com/watch?v=GNDWNW3IKwU&list=PLMf0q6-pSDdsWY4LWYncx25qvonLA520c&index=21
+const carDrivingSoundEffect = new Audio('sounds/carDriving.mp3'); // Audio Car Driving by sound effect, bron: https://www.youtube.com/watch?v=drZB8w2au10
 const characterImageOutfit = document.getElementById('characterImageOutfit');
-const finalCharacter = document.querySelector('.bedroomCharacter')
-const imgFInalCharacter = document.getElementById('finalizedCharacter')
+const finalCharacter = document.querySelector('.bedroomCharacter');
+const imgFInalCharacter = document.getElementById('finalizedCharacter');
+const eventButton = document.getElementById('eventButton');
+const bgVideo = document.querySelector('.bgVideo');
+const goBackButton = document.getElementById('goBackButton')
 
 // Define characters array
 const characters = [
@@ -126,7 +130,7 @@ function bedroom() {
     divCharacter.classList.add('hide');
     secondDivCharacterOutfits.classList.add('hide');
     finalCharacter.classList.toggle('hide')
- 
+    document.body.style.backgroundImage = "url(../images/bedroom.jpg)"
     //button sounds plays if clicked
     clickButtonSound.play();
 }
@@ -137,9 +141,6 @@ function showCharacterDiv() {
     playButtonStart.classList.add('hide')  //haalt begin scherm weg
     namePlayer = nameInput.value; // avatar naam
     header1.textContent = `Choose ur avatar, ` + namePlayer;
-
-    document.body.style.backgroundImage = "url(../images/bedroom.jpg)"
-
     //button sounds plays if clicked
     clickButtonSound.play();
 }
@@ -158,6 +159,34 @@ function playSoundLoop() {
     backgroundSound.play();
 }
 
+/*-------------------------------------Event Div show function--------------------------------------*/
+
+function showAnimationForEvent() {
+    finalCharacter.classList.add('hide');
+    document.body.style.backgroundImage = "url()"
+    bgVideo.classList.remove('hide')
+
+    setTimeout(showEventDiv, 15000)
+
+    carDrivingSoundEffect.play();
+}
+
+function showEventDiv() {
+    bgVideo.classList.add('hide')
+    document.body.style.backgroundImage = "url(../images/event.jpg)" // brond: https://nl.pinterest.com/pin/440860251042104281/
+    finalCharacter.classList.remove('hide');
+    eventButton.classList.add('hide')
+    goBackButton.classList.remove('hide')
+}
+
+/*-------------------------------------Go back home--------------------------------------*/
+
+function goHome() {
+    document.body.style.backgroundImage = "url(../images/bedroom.jpg)" //bron: https://nl.pinterest.com/pin/838584393144678367/
+    eventButton.classList.remove('hide')
+    goBackButton.classList.add('hide')
+}
+
 /*-----------------------------------EvenLIsterners----------------------------------------------*/
 arrowLeft.addEventListener('click', previousCharacter);
 arrowRight.addEventListener('click', nextCharacter);
@@ -168,6 +197,9 @@ confirmOufitButton.addEventListener('click', bedroom);
 playButton.addEventListener('click', showCharacterDiv);
 dice.addEventListener('click', randomCharacter);
 backgroundSound.addEventListener('ended', playSoundLoop);// When backgroundSound ends it restarts
+eventButton.addEventListener('click', showAnimationForEvent)
+goBackButton.addEventListener('click', goHome)
+
 
 // Starts the sound when whole page is loaded, otherwise sound wont load
 window.addEventListener('load', () => {
