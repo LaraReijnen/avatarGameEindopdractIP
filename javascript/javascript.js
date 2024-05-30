@@ -23,7 +23,7 @@ const eventButton = document.getElementById('eventButton');
 const bgVideo = document.querySelector('.bgVideo');
 const goBackButton = document.getElementById('goBackButton')
 
-// Define characters array
+/*-------------------------------------array character-------------------------------*/
 const characters = [
     "./images/character0.png",
     "./images/character1.png",
@@ -32,6 +32,7 @@ const characters = [
     "./images/character4.png",
 ];
 
+/*-------------------------------------array outfits------------------------------------*/
 const outfitsCharacter0 = [
     "./images/character0-outfit0.png",
     "./images/character0-outfit1.png",
@@ -63,13 +64,14 @@ const outfitsCharacter4 = [
 ];
 
 
-// lets
+/*--------------------------------------------lets--------------------------------------------*/
 let currentIndexCharacter = 0;
 let currentIndexOutfit = 0;
 let currentOutfits = outfitsCharacter0;
 let namePlayer = '';
 let diceNumber = 0;
 
+/*--------------------------------character selecetion-----------------------------------*/
 // Function to change to the next character
 function nextCharacter() {
     currentIndexCharacter = (currentIndexCharacter + 1) % characters.length; //cznnot be bigger than array
@@ -86,7 +88,7 @@ function displayOutfitSelection() {
     console.log("kies outfit");
 }
 
-/*--------------------3e pagina-----------------------------------------------*/
+/*-----------------------------------outfit selection-----------------------------------------------*/
 function selectOufit() {
     console.log("kies de outfit");
 
@@ -106,7 +108,7 @@ function selectOufit() {
     }
 
     characterImageOutfit.src = currentOutfits[currentIndexOutfit]
-    header2.textContent = `Choose ur outfit, ` + namePlayer //avatar naam
+    header2.textContent = 'Choose ur outfit, ' + namePlayer //avatar naam
 
     //button sounds plays if clicked
     clickButtonSound.play();
@@ -165,9 +167,8 @@ function showAnimationForEvent() {
     finalCharacter.classList.add('hide');
     document.body.style.backgroundImage = "url()"
     bgVideo.classList.remove('hide')
-
+    //setTimeOut if itd the 15000 video stops and new function starts
     setTimeout(showEventDiv, 15000)
-
     carDrivingSoundEffect.play();
 }
 
